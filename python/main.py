@@ -1,5 +1,7 @@
+import logging
 from modules import Graph
-from constant import *
+
+logging.basicConfig(level=logging.INFO)
 
 if __name__ != '__main__':
     raise RuntimeError('Run this with python3 main.py')
@@ -103,9 +105,14 @@ krl_graph.add_edge('citayam', 'bojong_gede', 5)
 krl_graph.add_edge('bojong_gede', 'cilebut', 5)
 krl_graph.add_edge('cilebut', 'bogor', 5)
 
+# Priok
+krl_graph.add_edge('jakarta_kota', 'kampung_bandan', 10)
+krl_graph.add_edge('kampung_bandan', 'ancol', 10)
+krl_graph.add_edge('ancol', 'tanjung_priok', 10)
+
 # route search
 # krl_graph.bfs('cikarang', 'bekasi')
 # krl_graph.bfs('bekasi', 'cikarang')
 # krl_graph.bfs('jatinegara', 'bogor')
 # krl_graph.bfs('bogor', 'rangkas_bitung')
-krl_graph.bfs('rangkas_bitung', 'jakarta_kota')
+krl_graph.bfs('rangkas_bitung', 'tanjung_priok')
